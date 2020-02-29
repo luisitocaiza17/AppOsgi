@@ -1,5 +1,7 @@
 package com.mycompany.secondosgi;
 
+//hola Lu
+
 import com.mycompany.secondosgi.utils.WaitThread;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
