@@ -1,12 +1,13 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1583000730965
-Build-Jdk: 12.0.2
-Built-By: luisi
+Bnd-LastModified: 1583380813592
+Build-Jdk: 11.0.6
+Built-By: franc
 Bundle-Activator: com.mycompany.secondosgi.Activator
 Bundle-ManifestVersion: 2
 Bundle-Name: SecondOSGI OSGi Bundle
 Bundle-SymbolicName: com.mycompany.SecondOSGI
 Bundle-Version: 1.0.0.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
-Import-Package: org.osgi.framework;version="[1.6,2)"
+Import-Package: javax.bluetooth,javax.microedition.io,org.osgi.framework
+ ;version="[1.6,2)"
 Tool: Bnd-1.50.0
