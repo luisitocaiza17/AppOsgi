@@ -24,6 +24,13 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/net.sf.bluecove/bluecove -->
         <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>4.3.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/net.sf.bluecove/bluecove -->
+        <dependency>
             <groupId>net.sf.bluecove</groupId>
             <artifactId>bluecove</artifactId>
             <version>2.1.0</version>
@@ -33,6 +40,15 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <version>2.3.7</version>
@@ -40,7 +56,13 @@
                 <configuration>
                     <instructions>
                         <Bundle-Activator>com.mycompany.secondosgi.Activator</Bundle-Activator>
-                        <Export-Package/>
+                        <_exportcontents>
+                            javax.bluetooth, javax.microedition.io, javax.obex, com.intel.bluetooth
+                        </_exportcontents>
+                        <Import-Package>
+                            !com.ibm.*, !com.sun.*, !org.apache.log4j, !android.os, *
+                        </Import-Package>
+                        <Embed-Dependency> bluecove, bluecove-gpl </Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
